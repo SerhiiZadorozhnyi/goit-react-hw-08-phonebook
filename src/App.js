@@ -1,18 +1,49 @@
-import ContactForm from 'components/ContactForm/ContactForm';
-import Filter from 'components/Filter/Filter';
-import ContactList from 'components/ContactList/ContactList';
+import { Switch } from 'react-router-dom';
+import AppBar from 'components/AppBar';
+import RegisterWiew from 'components/views/RegisterView';
+import LoginWiew from 'components/views/LoginView';
+import ContactView from 'components/views/ContactView';
+import PrivateRoute from 'components/PrivateRoute';
+import PublicRoute from 'components/PublicRoute';
+import HomePage from 'components/views/HomePage';
+import ContactEdit from 'components/ContactList/ContactEdit';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getCurrentUser } from 'components/redux/auth/auth-operations';
 
-import styles from './App.css';
+import './App.css';
 
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => dispatch(getCurrentUser()), [dispatch]);
+
   return (
-    <div style={{textAlign: "center"}}>
-      <h1 className={styles.bigText}>Phonebook</h1>
-      <ContactForm />
-      <h2 className={styles.text}>Contacts</h2>
-      <Filter />
-      <ContactList />
+    <div className="Container">
+      <AppBar />
+
+      <Switch>
+        <PublicRoute exact path="/">
+          <HomePage />
+        </PublicRoute>
+
+        <PublicRoute path="/register" redirectTo="/contacts" restricted>
+          <RegisterWiew />
+        </PublicRoute>
+
+        <PublicRoute path="/login" redirectTo="/contacts" restricted>
+          <LoginWiew />
+        </PublicRoute>
+
+        <PrivateRoute exact path="/contacts" redirectTo="/login">
+          <ContactView />
+        </PrivateRoute>
+
+        <PrivateRoute path="/contacts/:contactId" redirectTo="/login">
+          <ContactEdit />
+        </PrivateRoute>
+      </Switch>
     </div>
   );
 }

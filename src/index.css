@@ -14,18 +14,23 @@ code {
     monospace;
 }
 
-
-
-html, #root {
-  background-color: var(--dark-background);
-  color: var(--dark-text);
+.heder__styles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2a363b;
 }
 
-nav {
-  background-color: var(--dark-background);
-  color: var(--light-text);
+.navLink {
+  font-size: 18px;
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 400;
+  color: #2a363b;
+  font-family: 'Roboto';
 }
 
-.main-container {
-  background-color: var(--light-background);
+.navLink.active {
+  color: #3700b3;
 }

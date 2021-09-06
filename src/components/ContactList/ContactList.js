@@ -1,52 +1,69 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  fetchContact,
-  deleteContact,
-} from '../redux/contact/contact-operations';
-
-
-
+import { deleteContact} from '../redux/contact/contact-operations';
 import { getVisibleContact } from '../redux/contact/contact-selector';
 
 import styles from './ContactList.module.css';
+import { DeleteIcon } from '@material-ui/icons/Delete';
 import { Button } from '@material-ui/core';
-import { useEffect } from 'react';
+import { BorderColorIcon } from '@material-ui/icons/BorderColor';
+import { List } from '@material-ui/core';
+import { ListItem } from '@material-ui/core';
+import { ListItemText } from '@material-ui/core';
+import { ListItemAvatar } from '@material-ui/core';
+import { Avatar } from '@material-ui/core';
+import { Link, useLocation } from 'react-router-dom';
 
 
 function ContactList() {
   const contacts = useSelector(getVisibleContact);
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const onDeleteContact = id => dispatch(deleteContact(id));
 
-  // useEffect(() => {
-  //   dispatch(fetchContact());
-  //   // eslint-disable-next-line
-  // }, []);
-
-  useEffect(() => {
-    dispatch(fetchContact());
-  }, [dispatch]);
-
   return (
     <>
-      {!contacts.length && <div>Немає жодного контакту</div>}
-      <ul>
+      {contacts.length && <div>Немає жодного контакту.</div>}
+
+      <List>
         {contacts.map(({ id, name, number }) => (
-          <li key={id} className={styles.item__contact}>
-            <p className={styles.item__text}>{name}</p>
-            <p className={styles.item__text}>{number}</p>
+          <ListItem key={id}>
+            <ListItemAvatar>
+              <Avatar></Avatar>
+            </ListItemAvatar>
+            <ListItemText primary={name} secondary={number} />
+            <Link
+              className={styles.button__mardg}
+              to={{
+                pathname: `/contacts/${id}`,
+                state: { from: location },
+                name: name,
+                number: number,
+              }}
+            >
+              <Button
+                variant="contained"
+                color="primary"
+                size="small"
+                startIcon={<BorderColorIcon />}
+              >
+                Редагувати
+              </Button>
+            </Link>
+
             <Button
-              className={styles.item__button}
+              variant="contained"
+              color="primary"
+              size="small"
+              startIcon={<DeleteIcon />}
               onClick={() => onDeleteContact(id)}
-              color="secondary"
             >
               Видалити
             </Button>
-          </li>
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </>
   );
 }
