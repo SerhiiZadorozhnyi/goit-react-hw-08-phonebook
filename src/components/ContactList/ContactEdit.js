@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateContact } from "components/redux/contact/contact-operations";
 
-import './ContactList.module.css';
+import styles from'./ContactList.module.css';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import InputMask from 'react-input-mask';
@@ -45,9 +45,9 @@ function ContactEdit() {
                 noValidate
                 autoComplete="off"
                 onSubmit={handleSubmit}
-                className="item__form-edit"
+                className={styles.item__form_edit}
             >
-                <div className="item__input-edit">
+                <div className={styles.item__input_edit}>
                     <TextField
                         size="small"
                         label="Name"
@@ -59,7 +59,7 @@ function ContactEdit() {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="item__input-edit">
+                <div className={styles.item__input_edit}>
                     <InputMask
                         mask="(999)999-99-99"
                         maskChar={null}
@@ -81,14 +81,14 @@ function ContactEdit() {
                     </InputMask>
                 </div>
 
-                <div className="item__input">
+                <div className={styles.item__input}>
                     <Button
                         variant="contained"
                         color="primary"
                         type="submit"
                         disabled={name === '' || number === ''}
                     >
-                        Оновити контакт
+                        Update contact
                     </Button>
                 </div>
             </form>

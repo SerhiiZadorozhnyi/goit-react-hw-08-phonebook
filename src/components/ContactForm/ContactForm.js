@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContact } from '../redux/contact/contact-selector';
 import { addContact } from '../redux/contact/contact-operations';
 
-import './ContactForm.module.css';
+import styles from './ContactForm.module.css';
 import SaveIcon from '@material-ui/icons/Save';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -55,11 +55,11 @@ function ContactForm() {
     <>
       <form 
         onSubmit={handleSubmit} 
-        className="item__form" 
+        className={styles.item__form} 
         autoComplete="off" 
         noValidate
       >
-        <div className="item__input">
+        <div className={styles.item__input}>
           <TextField
             size="small"
             label="Name"
@@ -71,7 +71,7 @@ function ContactForm() {
             onChange={handleChange}
           />
         </div>
-        <div className="item__input">
+        <div className={styles.item__input}>
           <InputMask
             mask="(999)999-99-99"
             maskChar={null}
@@ -93,7 +93,7 @@ function ContactForm() {
           </InputMask>
         </div>
 
-        <div className="item__input">
+        <div className={styles.item__input}>
           <Button 
             variant="contained"
             type="submit"

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact} from '../redux/contact/contact-operations';
 import { getVisibleContact } from '../redux/contact/contact-selector';
 
-import './ContactList.module.css';
+import styles from './ContactList.module.css';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
@@ -34,7 +34,7 @@ function ContactList() {
             </ListItemAvatar>
             <ListItemText primary={name} secondary={number} />
             <Link
-              className="button__mardg"
+              className={styles.button__mardg}
               to={{
                 pathname: `/contacts/${id}`,
                 state: { from: location },
@@ -48,7 +48,7 @@ function ContactList() {
                 size="small"
                 startIcon={<BorderColorIcon />}
               >
-                Редагувати
+                Edit
               </Button>
             </Link>
 
@@ -59,7 +59,7 @@ function ContactList() {
               startIcon={<DeleteIcon />}
               onClick={() => onDeleteContact(id)}
             >
-              Видалити
+              Delete
             </Button>
           </ListItem>
         ))}
