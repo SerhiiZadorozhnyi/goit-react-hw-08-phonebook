@@ -10,7 +10,10 @@
     height: 32px;
     border-radius: 50%;
     border: 1px solid #3700b3;
-    background-color: #3700b3;;
+    /* background-color: #3700b3; */
+    background-image: url(./default-avatar.png);
+    
+    
 }
 
 .name__menu {

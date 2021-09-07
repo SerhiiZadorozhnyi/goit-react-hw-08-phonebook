@@ -101,7 +101,7 @@ function ContactForm() {
             disabled={name === '' || number === ''}
             startIcon={<SaveIcon />}  
           >
-            Зберегти
+            Save
           </Button>
         </div>
       </form>
