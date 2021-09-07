@@ -53,7 +53,12 @@ function ContactForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="itemForm" autoComplete="off" noValidate>
+      <form 
+        onSubmit={handleSubmit} 
+        className="item__form" 
+        autoComplete="off" 
+        noValidate
+      >
         <div className="item__input">
           <TextField
             size="small"
