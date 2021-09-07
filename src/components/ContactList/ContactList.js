@@ -3,15 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { deleteContact} from '../redux/contact/contact-operations';
 import { getVisibleContact } from '../redux/contact/contact-selector';
 
-import styles from './ContactList.module.css';
-import { DeleteIcon } from '@material-ui/icons/Delete';
-import { Button } from '@material-ui/core';
-import { BorderColorIcon } from '@material-ui/icons/BorderColor';
-import { List } from '@material-ui/core';
-import { ListItem } from '@material-ui/core';
-import { ListItemText } from '@material-ui/core';
-import { ListItemAvatar } from '@material-ui/core';
-import { Avatar } from '@material-ui/core';
+import './ContactList.module.css';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Button from '@material-ui/core/Button';
+import BorderColorIcon from '@material-ui/icons/BorderColor';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
 import { Link, useLocation } from 'react-router-dom';
 
 
@@ -24,7 +24,7 @@ function ContactList() {
 
   return (
     <>
-      {contacts.length && <div>Немає жодного контакту.</div>}
+      {!contacts.length && <div>Немає жодного контакту.</div>}
 
       <List>
         {contacts.map(({ id, name, number }) => (
@@ -34,7 +34,7 @@ function ContactList() {
             </ListItemAvatar>
             <ListItemText primary={name} secondary={number} />
             <Link
-              className={styles.button__mardg}
+              className="button__mardg"
               to={{
                 pathname: `/contacts/${id}`,
                 state: { from: location },

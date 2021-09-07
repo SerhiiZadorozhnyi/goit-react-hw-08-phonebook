@@ -2,9 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import actions from "components/redux/contact/contact-action";
 import { getFilter } from '../redux/contact/contact-selector';
 
-// import styles from './Filter.module.css';
-// import { Input } from '@material-ui/core';
-import { TextField } from "@material-ui/core";
+import './Filter.module.css';
+import TextField from '@material-ui/core/TextField';
 
 
 function Filter() {
@@ -20,16 +19,6 @@ function Filter() {
       value={value}
       onChange={event => dispatch(actions.changeFilter(event.target.value))}
     />
-
-    // <label className={styles.itemFilter}>
-    //   <p className={styles.itemTextFilter}>Пошук контактів</p>
-    //   <Input
-    //     className={styles.itemElement}
-    //     type="text"
-    //     value={value}
-    //     onChange={event => dispatch(actions.changeFilter(event.target.value))}
-    //   />
-    // </label>
   );
 }
 

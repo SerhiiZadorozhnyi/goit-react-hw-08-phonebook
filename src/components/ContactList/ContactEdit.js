@@ -3,9 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateContact } from "components/redux/contact/contact-operations";
 
-// import { Button } from "@material-ui/core";
-// import { TextField } from "@material-ui/core";
-// import { InputMask } from "react-input-mask";
+import './ContactList.module.css';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import InputMask from 'react-input-mask';
@@ -76,7 +74,7 @@ function ContactEdit() {
                         {inputProps => (
                             <TextField
                                 {...inputProps}
-                                type="number"
+                                type=" number "
                                 variant="outlined"
                             />
                         )}
@@ -84,14 +82,14 @@ function ContactEdit() {
                 </div>
 
                 <div className="item__input">
-                            <Button
-                                variant="contained"
-                                color="primary"
-                                type="submit"
-                                disabled={name === '' || number === ''}
-                            >
-                                Оновити контакт
-                            </Button>
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        type="submit"
+                        disabled={name === '' || number === ''}
+                    >
+                        Оновити контакт
+                    </Button>
                 </div>
             </form>
         </>

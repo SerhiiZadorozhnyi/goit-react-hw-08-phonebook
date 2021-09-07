@@ -3,12 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getContact } from '../redux/contact/contact-selector';
 import { addContact } from '../redux/contact/contact-operations';
 
-import styles from './ContactForm.module.css';
-import { SaveIcon } from '@material-ui/icons/Save';
-import { Button } from '@material-ui/core';
-import { TextField } from '@material-ui/core';
-import { InputMask } from 'react-input-mask';
-
+import './ContactForm.module.css';
+import SaveIcon from '@material-ui/icons/Save';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import InputMask from 'react-input-mask';
 
 
 function ContactForm() {
@@ -53,53 +52,55 @@ function ContactForm() {
 
 
   return (
-    <form onSubmit={handleSubmit} className={styles.itemForm} autoComplete="off" noValidate>
-      <div className="styles.item__input">
-        <TextField
-          size="small"
-          label="Name"
-          variant="outlined"
-          type="text"
-          name="name"
-          placeholder="Jack Sparrow"
-          value={name}
-          onChange={handleChange}
-        />
-      </div>
-      <div className="styles.item__input">
-        <InputMask
-          mask="(999)999-99-99"
-          maskChar={null}
-          size="small"
-          label="Phone"
-          variant="outlined"
-          type="text"
-          name="Number"
-          value={number}
-          onChange={handleChange}
-        >
-          {inputProps => (
-            <TextField
-              {...inputProps}
-              type="number"
-              variant="outlined"
-            />
-          )}
-        </InputMask>
-      </div>
+    <>
+      <form onSubmit={handleSubmit} className="itemForm" autoComplete="off" noValidate>
+        <div className="item__input">
+          <TextField
+            size="small"
+            label="Name"
+            variant="outlined"
+            type="text"
+            name="name"
+            placeholder="Jack Sparrow"
+            value={name}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="item__input">
+          <InputMask
+            mask="(999)999-99-99"
+            maskChar={null}
+            size="small"
+            label="Phone"
+            variant="outlined"
+            type="text"
+            name="number"
+            value={number}
+            onChange={handleChange}
+          >
+            {inputProps => (
+              <TextField
+                {...inputProps}
+                type=" number "
+                variant="outlined"
+              />
+            )}
+          </InputMask>
+        </div>
 
-      <div className="item__input">
-        <Button 
-          variant="contained"
-          type="submit" color="primary"
-          className={styles.button}
-          disabled={name === '' || number === ''}
-          startIcon={<SaveIcon />}  
-        >
-          Додати контакт
-        </Button>
-      </div>
-    </form>
+        <div className="item__input">
+          <Button 
+            variant="contained"
+            type="submit"
+            color="primary"
+            disabled={name === '' || number === ''}
+            startIcon={<SaveIcon />}  
+          >
+            Зберегти
+          </Button>
+        </div>
+      </form>
+    </>
   );
 }
   

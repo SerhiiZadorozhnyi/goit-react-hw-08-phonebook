@@ -4,7 +4,7 @@ import { getUserName } from '../redux/auth/auth-selectors';
 import { logOut } from '../redux/auth/auth-operations';
 
 import './UserMenu.module.css';
-import { Button } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
 
 function UserMenu() {
