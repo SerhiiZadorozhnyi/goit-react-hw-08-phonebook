@@ -1,7 +1,7 @@
 import { createAction } from "@reduxjs/toolkit";
 
 const registerRequest = createAction('auth/registerRequest');
-const registerSuccuess = createAction('auth/registerSuccess');
+const registerSuccess = createAction('auth/registerSuccess');
 const registerError = createAction('auth/registerError');
 
 const loginRequest = createAction('auth/loginRequest');
@@ -19,7 +19,7 @@ const getCurrentUserError = createAction('auth/getCurrentUserError');
 // eslint-disable-next-line
 export default {
     registerRequest,
-    registerSuccuess,
+    registerSuccess,
     registerError,
     loginRequest,
     loginSuccess,

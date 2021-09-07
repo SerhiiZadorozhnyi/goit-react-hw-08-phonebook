@@ -3,12 +3,18 @@ import { useDispatch } from 'react-redux';
 import { register } from 'components/redux/auth/auth-operations';
 
 import './ViewPage.css';
-import { Avatar } from '@material-ui/core';
-import { Button } from '@material-ui/core';
-import { TextField } from '@material-ui/core';
+// import { Avatar } from '@material-ui/core';
+// import { Button } from '@material-ui/core';
+// import { TextField } from '@material-ui/core';
+// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+// import { Typography } from '@material-ui/core';
+// import { Container } from '@material-ui/core';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import { Typography } from '@material-ui/core';
-import { Container } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 
 function RegisterWiew() {
@@ -56,7 +62,7 @@ function RegisterWiew() {
                 </div>
 
                 <Typography component="h1" variant="h5">
-                    Sign In
+                    Sign up
                 </Typography>
                 <form onSubmit={handleSubmit} noValidate>
                     <div className="input__reg">
@@ -77,7 +83,6 @@ function RegisterWiew() {
                     <div className="input__reg">
                         <TextField
                             variant="outlined"
-                            // margin="normal"
                             required
                             fullWidth
                             label="Email Address"
@@ -94,6 +99,7 @@ function RegisterWiew() {
                             fullWidth
                             label="Password"
                             name="password"
+                            type="password"
                             value={password}
                             autoComplete="current-password"
                             onChange={handleChange}

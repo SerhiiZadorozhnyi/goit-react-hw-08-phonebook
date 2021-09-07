@@ -3,9 +3,12 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateContact } from "components/redux/contact/contact-operations";
 
-import { Button } from "@material-ui/core";
-import { TextField } from "@material-ui/core";
-import { InputMask } from "react-input-mask";
+// import { Button } from "@material-ui/core";
+// import { TextField } from "@material-ui/core";
+// import { InputMask } from "react-input-mask";
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import InputMask from 'react-input-mask';
 
 
 function ContactEdit() {
