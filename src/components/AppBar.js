@@ -2,7 +2,7 @@ import React from 'react';
 import Navigation from './Navigation';
 import UserMenu from './UserMenu/UserMenu';
 import AuthNav from './AuthNav';
-import { getIsAuthenticated } from './redux/auth/auth-selectors';
+import { getIsAuthenticated } from 'redux/auth/auth-selectors';
 import { useSelector } from 'react-redux';
 
 function AppBar() {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { getIsAuthenticated } from './redux/auth/auth-selectors';
+import { getIsAuthenticated } from 'redux/auth/auth-selectors';
 
 
 function PublicRoute({ redirectTo, children, ...routeProps }) {

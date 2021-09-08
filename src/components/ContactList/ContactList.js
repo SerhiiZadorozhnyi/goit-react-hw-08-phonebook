@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContact} from '../redux/contact/contact-operations';
-import { getVisibleContact } from '../redux/contact/contact-selector';
+import { deleteContact } from 'redux/contact/contact-operations';
+import { getVisibleContact } from 'redux/contact/contact-selector';
 
 import styles from './ContactList.module.css';
 import DeleteIcon from '@material-ui/icons/Delete';

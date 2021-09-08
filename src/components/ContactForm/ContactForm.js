@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getContact } from '../redux/contact/contact-selector';
-import { addContact } from '../redux/contact/contact-operations';
+import { getContact } from 'redux/contact/contact-selector';
+import { addContact } from 'redux/contact/contact-operations';
 
 import styles from './ContactForm.module.css';
 import SaveIcon from '@material-ui/icons/Save';

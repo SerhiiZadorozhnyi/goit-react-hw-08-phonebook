@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import ContactForm from "components/ContactForm/ContactForm";
 import ContactList from "components/ContactList/ContactList";
 import Filter from "components/Filter/Filter";
-import { fetchContact } from "components/redux/contact/contact-operations";
+import { fetchContact } from "redux/contact/contact-operations";
 
 
 function ContactView() {

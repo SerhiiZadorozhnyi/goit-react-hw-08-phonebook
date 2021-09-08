@@ -9,7 +9,7 @@ import HomePage from 'components/views/HomePage';
 import ContactEdit from 'components/ContactList/ContactEdit';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getCurrentUser } from 'components/redux/auth/auth-operations';
+import { getCurrentUser } from 'redux/auth/auth-operations';
 
 import './App.css';
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { register } from 'components/redux/auth/auth-operations';
+import { register } from 'redux/auth/auth-operations';
 
 import './ViewPage.css';
 import Avatar from '@material-ui/core/Avatar';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserName } from '../redux/auth/auth-selectors';
-import { logOut } from '../redux/auth/auth-operations';
+import { getUserName } from 'redux/auth/auth-selectors';
+import { logOut } from 'redux/auth/auth-operations';
 
 import styles from './UserMenu.module.css';
 import Button from '@material-ui/core/Button';

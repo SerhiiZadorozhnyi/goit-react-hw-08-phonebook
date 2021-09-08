@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import actions from "components/redux/contact/contact-action";
-import { getFilter } from '../redux/contact/contact-selector';
+import actions from "redux/contact/contact-action";
+import { getFilter } from "redux/contact/contact-selector";
 
 // import styles from './Filter.module.css';
 import TextField from '@material-ui/core/TextField';

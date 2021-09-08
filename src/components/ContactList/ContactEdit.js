@@ -1,7 +1,7 @@
 import { useHistory, useLocation, useParams } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { updateContact } from "components/redux/contact/contact-operations";
+import { updateContact } from "redux/contact/contact-operations";
 
 import styles from'./ContactList.module.css';
 import Button from '@material-ui/core/Button';
