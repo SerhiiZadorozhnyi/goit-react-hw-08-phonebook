@@ -24,7 +24,7 @@ function ContactList() {
 
   return (
     <>
-      {!contacts.length && <div>Немає жодного контакту.</div>}
+      {!contacts.length && <div>Contacts not found.</div>}
 
       <List>
         {contacts.map(({ id, name, number }) => (
